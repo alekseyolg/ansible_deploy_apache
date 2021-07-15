@@ -1,0 +1,7 @@
+---
+- name: Install apache web-server from RedHat and Debian10
+  hosts: all
+  become: yes
+ 
+  roles:
+    - remove_apache_web

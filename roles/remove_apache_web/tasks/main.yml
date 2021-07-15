@@ -1,0 +1,12 @@
+---
+# tasks file for deploy_apache_web
+#
+- block:
+    - name: Install apache from RedHat
+      yum: name=httpd state=absent
+  when: ansible_os_family == "RedHat"
+
+- block:
+    - name: Install apache from Debian
+      apt: name=apache2 state=absent
+  when: ansible_os_family == "Debian" 
